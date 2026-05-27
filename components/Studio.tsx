@@ -28,7 +28,7 @@ const pillars = [
     href: "/portfolio",
     image:
       "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=80",
-    video: "/videos/v2.mp4",
+    video: "/videos/visual-project.mp4",
     alt: "Behind the scenes creative work"
   }
 ];

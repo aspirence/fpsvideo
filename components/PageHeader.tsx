@@ -7,22 +7,38 @@ export default function PageHeader({
   eyebrow,
   title,
   subtitle,
-  crumbs
+  crumbs,
+  image
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   crumbs?: Crumb[];
+  image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden pt-32 sm:pt-40 pb-16 sm:pb-20 border-b border-white/5">
-      <div className="absolute inset-0 hero-grid" />
+    <section className="relative overflow-hidden border-b border-white/5">
+      {image && (
+        <>
+          <img
+            src={image}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* Dark overlays keep the headline readable over any image */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/85 to-brand-bg/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/80 via-transparent to-transparent" />
+        </>
+      )}
+
+      {!image && <div className="absolute inset-0 hero-grid" />}
       <div
         className="absolute -top-32 left-1/2 -translate-x-1/2 h-[360px] w-[700px] rounded-full blur-3xl opacity-20"
         style={{ background: "radial-gradient(closest-side, #3b82f6, transparent)" }}
       />
 
-      <div className="container-wide relative">
+      <div className="container-wide relative flex min-h-[46vh] flex-col justify-end pt-36 pb-14 sm:min-h-[54vh] sm:pt-44 sm:pb-16">
         {crumbs && crumbs.length > 0 && (
           <nav className="flex items-center gap-1 text-xs text-brand-muted">
             {crumbs.map((c, i) => (

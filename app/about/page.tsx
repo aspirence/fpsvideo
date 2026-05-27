@@ -20,6 +20,7 @@ export default function AboutPage() {
         title="A small studio with big creative ambitions."
         subtitle="Built in Agra. Trusted by creators and brands across India. Crafting content that travels — from the first idea to the final frame."
         crumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
+        image="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1920&q=80"
       />
       <Reveal><About /></Reveal>
       <Reveal><BehindTheScene /></Reveal>

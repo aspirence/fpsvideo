@@ -19,6 +19,7 @@ export default function PortfolioPage() {
         title="Selected projects from the studio."
         subtitle="Real work from real partnerships. Use the filters below to explore by category."
         crumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
+        image="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80"
       />
       <Reveal><Portfolio /></Reveal>
       <Reveal><BehindTheScene /></Reveal>

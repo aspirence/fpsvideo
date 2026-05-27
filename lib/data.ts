@@ -1,5 +1,6 @@
 import servicesJson from "@/data/services.json";
 import portfolioJson from "@/data/portfolio.json";
+import projectsJson from "@/data/projects.json";
 import testimonialsJson from "@/data/testimonials.json";
 import statsJson from "@/data/stats.json";
 import btsJson from "@/data/bts.json";
@@ -42,6 +43,8 @@ export type Stat = {
 export type Bts = {
   id: number;
   title: string;
+  label: string;
+  description: string;
   image: string;
   video?: string;
 };
@@ -59,8 +62,30 @@ export type Site = {
   social: { facebook: string; instagram: string; youtube: string };
 };
 
+export type Clip = {
+  title: string;
+  // Local file (/videos/x.mp4) OR a YouTube / Instagram / Facebook link.
+  src: string;
+};
+
+export type Project = {
+  id: number;
+  number: string;
+  slug: string;
+  title: string;
+  client: string;
+  category: string;
+  year: string;
+  description: string;
+  deliverables: string[];
+  video?: string;
+  image: string;
+  clips: Clip[];
+};
+
 export const services = servicesJson as Service[];
 export const portfolio = portfolioJson as PortfolioItem[];
+export const projects = projectsJson as Project[];
 export const testimonials = testimonialsJson as Testimonial[];
 export const stats = statsJson as Stat[];
 export const bts = btsJson as Bts[];

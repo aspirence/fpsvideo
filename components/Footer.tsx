@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
 import { site, services } from "@/lib/data";
 
 export default function Footer() {
@@ -78,16 +78,6 @@ export default function Footer() {
             Contact
           </h4>
           <ul className="mt-4 space-y-3 text-sm text-brand-muted">
-            <li className="flex gap-3">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-brand-gold" />
-              <span>{site.contact.address}</span>
-            </li>
-            <li className="flex gap-3 items-center">
-              <Phone size={16} className="shrink-0 text-brand-gold" />
-              <a href={`tel:${site.contact.phone.replace(/\s/g, "")}`} className="hover:text-brand-gold transition">
-                {site.contact.phone}
-              </a>
-            </li>
             <li className="flex gap-3 items-center">
               <Mail size={16} className="shrink-0 text-brand-gold" />
               <a href={`mailto:${site.contact.email}`} className="hover:text-brand-gold transition">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/lib/data";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Send, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -41,29 +41,6 @@ export default function Contact() {
           </p>
 
           <ul className="mt-8 space-y-5">
-            <li className="flex gap-4">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold shrink-0">
-                <MapPin size={18} />
-              </span>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-brand-muted">Address</p>
-                <p className="text-sm">{site.contact.address}</p>
-              </div>
-            </li>
-            <li className="flex gap-4">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold shrink-0">
-                <Phone size={18} />
-              </span>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-brand-muted">Phone</p>
-                <a
-                  href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-                  className="text-sm hover:text-brand-gold transition"
-                >
-                  {site.contact.phone}
-                </a>
-              </div>
-            </li>
             <li className="flex gap-4">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold shrink-0">
                 <Mail size={18} />

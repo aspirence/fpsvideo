@@ -19,6 +19,7 @@ export default function ServicesPage() {
         title="Services built around your story."
         subtitle="From concept and pre-production to shoot, edit, sound and final delivery — everything you need under one roof."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
+        image="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1920&q=80"
       />
       <Reveal><Services /></Reveal>
       <Reveal><Studio /></Reveal>

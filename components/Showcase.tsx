@@ -58,11 +58,14 @@ export default function Showcase() {
           </div>
         </div>
 
-        {/* Right: horizontal scrolling cards */}
-        <div className="relative">
+        {/* Right: horizontal scrolling cards. min-w-0 is required so this grid
+            column respects its track width instead of stretching to fit all
+            cards — without it the row overflows the container AND the scroll
+            buttons have nothing to scroll. */}
+        <div className="relative min-w-0">
           <div
             ref={trackRef}
-            className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0"
+            className="no-scrollbar -mx-4 flex min-w-0 snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0"
           >
           {portfolio.map((item) => (
             <Link
