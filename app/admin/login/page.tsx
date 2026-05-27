@@ -1,4 +1,5 @@
 import { loginAction } from "@/app/admin/actions";
+import PasswordField from "@/components/admin/PasswordField";
 
 export default function AdminLoginPage({
   searchParams
@@ -28,13 +29,7 @@ export default function AdminLoginPage({
           autoComplete="username"
           className="mt-5 w-full border border-white/10 bg-black/40 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none"
         />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          autoComplete="current-password"
-          className="mt-3 w-full border border-white/10 bg-black/40 px-4 py-3 text-sm focus:border-brand-gold focus:outline-none"
-        />
+        <PasswordField />
         <button type="submit" className="btn-primary mt-4 w-full">
           Log in
         </button>
