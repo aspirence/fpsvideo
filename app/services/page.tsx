@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     "Video Production, Video Editing, Graphic Design, Audio Production and Photography services from FPS."
 };
 
+export const dynamic = "force-dynamic";
+
 export default function ServicesPage() {
   return (
     <>

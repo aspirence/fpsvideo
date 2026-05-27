@@ -1,7 +1,8 @@
-import { bts } from "@/lib/data";
+import { getBts } from "@/lib/queries";
 import MediaTile from "@/components/MediaTile";
 
 export default function BehindTheScene() {
+  const bts = getBts();
   return (
     <section className="py-20 sm:py-28 bg-brand-surface/40 border-y border-white/5">
       <div className="container-wide">

@@ -66,7 +66,7 @@ export default function WhatWeDeliver() {
   }, []);
 
   return (
-    <section className="overflow-hidden py-24 sm:py-32">
+    <section className="overflow-hidden pb-24 pt-8 sm:pb-32 sm:pt-12">
       <div className="container-wide text-center">
         <h2 className="font-condensed text-5xl uppercase leading-none tracking-tight text-white sm:text-7xl">
           What is FPS?
@@ -132,8 +132,13 @@ export default function WhatWeDeliver() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link href="/services" className="btn-primary">
-          See how we work
+        <Link
+          href="/contact"
+          className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-colors duration-300"
+        >
+          {/* Green fill that rises from the bottom-center on hover */}
+          <span className="pointer-events-none absolute bottom-0 left-1/2 z-0 aspect-square w-[135%] -translate-x-1/2 translate-y-1/2 scale-0 rounded-full bg-emerald-400 transition-transform duration-500 ease-out group-hover:scale-100" />
+          <span className="relative z-10">Let&apos;s work together</span>
         </Link>
       </div>
     </section>

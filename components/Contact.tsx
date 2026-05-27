@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { site } from "@/lib/data";
+import type { Site } from "@/lib/queries";
 import { Mail, Send, CheckCircle2 } from "lucide-react";
 
-export default function Contact() {
+export default function Contact({ site }: { site: Site }) {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 

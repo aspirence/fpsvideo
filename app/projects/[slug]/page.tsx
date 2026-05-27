@@ -6,18 +6,16 @@ import MediaTile from "@/components/MediaTile";
 import VideoEmbed from "@/components/VideoEmbed";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
-import { projects } from "@/lib/data";
+import { getProjectBySlug } from "@/lib/queries";
 
-export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
-}
+export const dynamic = "force-dynamic";
 
 export function generateMetadata({
   params
 }: {
   params: { slug: string };
 }): Metadata {
-  const p = projects.find((x) => x.slug === params.slug);
+  const p = getProjectBySlug(params.slug);
   if (!p) return { title: "Project — FPS" };
   return { title: `${p.title} — FPS`, description: p.description };
 }
@@ -27,14 +25,25 @@ export default function ProjectDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const project = getProjectBySlug(params.slug);
   if (!project) notFound();
 
   return (
     <>
-      {/* Intro + center thumbnail */}
-      <section className="pb-12 pt-28 sm:pb-16 sm:pt-32">
-        <div className="container-wide">
+      {/* Solid navbar area on top, then the full-width thumbnail below it */}
+      <section className="pt-16 sm:pt-20">
+        <div className="relative h-[70vh] w-full overflow-hidden border-y border-white/10 sm:h-[82vh]">
+          <MediaTile
+            image={project.image}
+            video={project.video}
+            alt={project.title}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-black/40" />
+        </div>
+
+        {/* Back link + heading + intro — below the video, left-aligned */}
+        <div className="container-wide pb-16 pt-10">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-sm text-brand-muted transition hover:text-brand-gold"
@@ -42,7 +51,7 @@ export default function ProjectDetailPage({
             <ArrowLeft size={16} /> All projects
           </Link>
 
-          <div className="mt-8 text-center">
+          <div className="mt-6">
             <span className="eyebrow">
               {project.category} &middot; {project.year}
             </span>
@@ -53,25 +62,12 @@ export default function ProjectDetailPage({
               For {project.client}
             </p>
           </div>
-        </div>
 
-        {/* Full-width thumbnail */}
-        <div className="relative mt-10 h-[55vh] w-full overflow-hidden border-y border-white/10 sm:h-[72vh]">
-          <MediaTile
-            image={project.image}
-            video={project.video}
-            alt={project.title}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-        </div>
-
-        <div className="container-wide">
-          <div className="mx-auto mt-10 max-w-2xl text-center">
+          <div className="mt-8 max-w-2xl">
             <p className="leading-relaxed text-brand-muted">
               {project.description}
             </p>
-            <ul className="mt-6 flex flex-wrap justify-center gap-2">
+            <ul className="mt-6 flex flex-wrap gap-2">
               {project.deliverables.map((d) => (
                 <li
                   key={d}

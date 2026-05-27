@@ -4,3 +4,8 @@ out
 .env*.local
 .DS_Store
 *.log
+
+# SQLite temp files (the app.db itself is intentionally committed)
+*.db-journal
+*.db-wal
+*.db-shm

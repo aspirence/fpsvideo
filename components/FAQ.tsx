@@ -35,7 +35,7 @@ export default function FAQ() {
 
   return (
     <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <span className="eyebrow">FAQ</span>
           <h2 className="section-title mt-3">
@@ -52,16 +52,16 @@ export default function FAQ() {
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                  className="flex w-full items-center justify-between gap-6 py-7 text-left"
                 >
-                  <span className="text-base font-semibold text-white sm:text-lg">
+                  <span className="text-lg font-semibold text-white sm:text-xl">
                     {f.q}
                   </span>
                   {isOpen ? (
-                    <Minus size={22} className="shrink-0 text-brand-gold" />
+                    <Minus size={26} className="shrink-0 text-brand-gold" />
                   ) : (
                     <Plus
-                      size={22}
+                      size={26}
                       className="shrink-0 text-brand-gold transition group-hover:text-brand-gold"
                     />
                   )}

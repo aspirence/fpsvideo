@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { portfolio } from "@/lib/data";
+import { getPortfolio } from "@/lib/queries";
 import { ArrowUpRight } from "lucide-react";
 import MediaTile from "@/components/MediaTile";
 
 export default function PortfolioTeaser() {
-  const featured = portfolio.slice(0, 3);
+  const featured = getPortfolio().slice(0, 3);
   return (
     <section className="py-20 sm:py-28">
       <div className="container-wide">

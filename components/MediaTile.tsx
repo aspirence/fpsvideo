@@ -1,6 +1,6 @@
 type Props = {
   image: string;
-  video?: string;
+  video?: string | null;
   alt: string;
   className?: string;
 };

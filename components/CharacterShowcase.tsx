@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { bts } from "@/lib/data";
+import type { Bts } from "@/lib/queries";
 import MediaTile from "@/components/MediaTile";
 
-export default function CharacterShowcase() {
+export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
   const [active, setActive] = useState(0);
   const items = bts;
   if (!items.length) return null;
@@ -59,15 +59,15 @@ export default function CharacterShowcase() {
             </div>
           </div>
 
-          {/* Right: vertical thumbnail selector (desktop) */}
-          <div className="order-3 hidden flex-col gap-3 lg:col-span-2 lg:flex">
+          {/* Thumbnail selector — horizontal on mobile, vertical column on desktop */}
+          <div className="no-scrollbar order-3 flex gap-3 overflow-x-auto lg:col-span-2 lg:flex-col lg:overflow-visible">
             {items.map((item, i) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setActive(i)}
                 aria-label={item.title}
-                className={`relative aspect-video overflow-hidden border transition ${
+                className={`relative aspect-video w-28 shrink-0 overflow-hidden border transition lg:w-auto ${
                   i === active
                     ? "border-brand-gold opacity-100"
                     : "border-white/10 opacity-50 hover:opacity-90"
@@ -81,29 +81,6 @@ export default function CharacterShowcase() {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Bottom: circular avatar selectors */}
-        <div className="mt-12 flex justify-center gap-4">
-          {items.map((item, i) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-label={item.title}
-              className={`relative h-14 w-14 overflow-hidden rounded-full border-2 transition sm:h-16 sm:w-16 ${
-                i === active
-                  ? "scale-110 border-brand-gold"
-                  : "border-white/15 opacity-55 hover:opacity-100"
-              }`}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            </button>
-          ))}
         </div>
       </div>
     </section>

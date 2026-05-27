@@ -4,6 +4,7 @@ import Portfolio from "@/components/Portfolio";
 import BehindTheScene from "@/components/BehindTheScene";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
+import { getPortfolio } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Portfolio — FPS",
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
     "A showcase of recent FPS projects — videos, designs, audio, and photography for creators and brands."
 };
 
+export const dynamic = "force-dynamic";
+
 export default function PortfolioPage() {
+  const portfolio = getPortfolio();
   return (
     <>
       <PageHeader
@@ -21,7 +25,7 @@ export default function PortfolioPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
         image="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80"
       />
-      <Reveal><Portfolio /></Reveal>
+      <Reveal><Portfolio portfolio={portfolio} /></Reveal>
       <Reveal><BehindTheScene /></Reveal>
       <Reveal><CTABanner /></Reveal>
     </>

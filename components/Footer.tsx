@@ -1,8 +1,20 @@
-import Link from "next/link";
-import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
-import { site, services } from "@/lib/data";
+"use client";
 
-export default function Footer() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Facebook, Instagram, Youtube, Mail } from "lucide-react";
+import type { Site, Service } from "@/lib/queries";
+
+export default function Footer({
+  site,
+  services
+}: {
+  site: Site;
+  services: Service[];
+}) {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <footer className="border-t border-white/5 bg-black">
       <div className="container-wide py-14 grid gap-10 md:grid-cols-4">

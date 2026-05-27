@@ -1,6 +1,7 @@
-import { clients } from "@/lib/data";
+import { getClients } from "@/lib/queries";
 
 export default function Clients() {
+  const clients = getClients();
   if (!clients.length) return null;
   return (
     <section className="py-16 sm:py-20 border-y border-white/5 bg-black/50">

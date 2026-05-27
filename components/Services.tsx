@@ -1,4 +1,4 @@
-import { services } from "@/lib/data";
+import { getServices } from "@/lib/queries";
 import { Palette, Video, Mic, Camera, Film, type LucideIcon } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -10,6 +10,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export default function Services() {
+  const services = getServices();
   return (
     <section id="services" className="py-20 sm:py-28 bg-brand-surface/40 border-y border-white/5">
       <div className="container-wide">

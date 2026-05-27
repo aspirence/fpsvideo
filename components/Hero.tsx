@@ -27,17 +27,17 @@ export default function Hero() {
             A production house from Agra
           </span>
 
-          <h1 className="mt-4 font-condensed font-normal text-[clamp(2.25rem,8vw,6rem)] leading-[0.9] tracking-tight uppercase text-white">
+          <h1 className="hero-title mt-4 font-normal text-[clamp(2.25rem,8vw,6rem)] leading-[0.9] tracking-tight uppercase text-white">
             <span className="block">Creative</span>
             <span className="block gradient-text">Stories</span>
           </h1>
 
-          <div className="mt-6 flex items-center gap-3">
+          <div className="mt-6 flex items-center justify-center gap-3">
             <span className="h-10 w-10 grid place-items-center rounded-full bg-brand-gold text-white font-bold text-sm shrink-0">
               F
             </span>
             <p className="text-xs sm:text-sm text-white/85">
-              FPS &middot; Production house in Agra, India
+              FPS &middot; Production house
             </p>
           </div>
         </div>
@@ -45,15 +45,18 @@ export default function Hero() {
 
       <div className="container-wide relative z-10 pb-10 sm:pb-14 text-center">
         <p className="text-xs sm:text-sm text-white/75 max-w-xl mx-auto leading-relaxed">
-          A full-service media production house from Agra. Video, design,
-          audio and photography for creators and brands across India.
+          A full-service media production house — video, design, audio and
+          photography for creators and brands that want to stand out.
         </p>
 
         <Link
           href="/contact"
-          className="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-gold hover:bg-brand-goldDark px-5 py-2 text-xs font-semibold text-white transition"
+          className="group relative mt-5 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-xs font-semibold text-black transition-colors duration-300"
         >
-          Start your project <ArrowRight size={12} />
+          <span className="pointer-events-none absolute bottom-0 left-1/2 z-0 aspect-square w-[135%] -translate-x-1/2 translate-y-1/2 scale-0 rounded-full bg-emerald-400 transition-transform duration-500 ease-out group-hover:scale-100" />
+          <span className="relative z-10 inline-flex items-center gap-2">
+            Start your project <ArrowRight size={12} />
+          </span>
         </Link>
       </div>
     </section>

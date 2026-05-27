@@ -3,11 +3,14 @@ import PageHeader from "@/components/PageHeader";
 import Contact from "@/components/Contact";
 import Reveal from "@/components/Reveal";
 import { Clock, Globe } from "lucide-react";
+import { getSite } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Contact — FPS",
   description: "Get in touch with FPS — Agra-based media production house."
 };
+
+export const dynamic = "force-dynamic";
 
 const faqs = [
   {
@@ -29,6 +32,7 @@ const faqs = [
 ];
 
 export default function ContactPage() {
+  const site = getSite();
   return (
     <>
       <PageHeader
@@ -38,7 +42,7 @@ export default function ContactPage() {
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
-      <Reveal><Contact /></Reveal>
+      <Reveal><Contact site={site} /></Reveal>
 
       <Reveal>
         <section className="py-16 sm:py-20 border-t border-white/5 bg-brand-surface/30">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getSite, getServices } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "FPS - Where Creativity Meets Results",
@@ -23,12 +24,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const site = getSite();
+  const services = getServices();
   return (
     <html lang="en">
       <body className="bg-brand-bg text-brand-text">
         <Header />
         <main>{children}</main>
-        <Footer />
+        <Footer site={site} services={services} />
       </body>
     </html>
   );

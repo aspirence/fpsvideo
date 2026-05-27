@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import About from "@/components/About";
 import BehindTheScene from "@/components/BehindTheScene";
-import Testimonials from "@/components/Testimonials";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
 
@@ -11,6 +10,8 @@ export const metadata: Metadata = {
   description:
     "Learn about FPS — a media production house from Agra crafting stories that engage audiences and deliver results."
 };
+
+export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (
@@ -24,7 +25,6 @@ export default function AboutPage() {
       />
       <Reveal><About /></Reveal>
       <Reveal><BehindTheScene /></Reveal>
-      <Reveal><Testimonials /></Reveal>
       <Reveal><CTABanner /></Reveal>
     </>
   );

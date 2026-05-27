@@ -10,8 +10,8 @@ const pillars = [
 
 export default function AboutTeaser() {
   return (
-    <section className="py-20 sm:py-28">
-      <div className="container-wide grid gap-12 lg:grid-cols-2 items-center">
+    <section className="pt-20 pb-10 sm:pt-28 sm:pb-12">
+      <div className="container-wide grid gap-12 lg:grid-cols-2 lg:items-start">
         <div>
           <span className="eyebrow">Who We Are</span>
           <h2 className="section-title mt-4">
@@ -21,7 +21,11 @@ export default function AboutTeaser() {
           <p className="mt-6 text-brand-muted leading-relaxed">
             FPS is your one-stop destination for Video Production, Graphic
             Design, Audio Production and Photography that transforms ideas
-            into captivating visuals.
+            into captivating visuals. From the first concept call to the final
+            delivery, we handle every step in-house — scripting, shooting,
+            editing, sound and colour grading. Whether you&apos;re a creator
+            building an audience or a brand chasing growth, we craft work
+            that&apos;s made to be remembered — and built to get results.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

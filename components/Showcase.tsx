@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { portfolio } from "@/lib/data";
+import type { PortfolioItem } from "@/lib/queries";
 import MediaTile from "@/components/MediaTile";
 
-export default function Showcase() {
+export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (dir: 1 | -1) => {

@@ -3,10 +3,10 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { projects } from "@/lib/data";
+import type { Project } from "@/lib/queries";
 import MediaTile from "@/components/MediaTile";
 
-export default function ProjectsCarousel() {
+export default function ProjectsCarousel({ projects }: { projects: Project[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
 
   const scrollBy = (dir: 1 | -1) => {
@@ -79,17 +79,17 @@ export default function ProjectsCarousel() {
           type="button"
           onClick={() => scrollBy(-1)}
           aria-label="Previous"
-          className="absolute left-3 top-[32%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur transition hover:border-brand-gold hover:text-brand-gold"
+          className="absolute left-3 top-[32%] grid h-14 w-12 -translate-y-1/2 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft size={22} />
         </button>
         <button
           type="button"
           onClick={() => scrollBy(1)}
           aria-label="Next"
-          className="absolute right-3 top-[32%] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur transition hover:border-brand-gold hover:text-brand-gold"
+          className="absolute right-3 top-[32%] grid h-14 w-12 -translate-y-1/2 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
         >
-          <ChevronRight size={18} />
+          <ChevronRight size={22} />
         </button>
       </div>
     </section>

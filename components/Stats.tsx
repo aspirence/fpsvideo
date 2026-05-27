@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/lib/data";
+import type { Stat } from "@/lib/queries";
 
 function useCountUp(target: number, start: boolean, duration = 1600) {
   const [n, setN] = useState(0);
@@ -45,7 +45,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
   );
 }
 
-export default function Stats() {
+export default function Stats({ stats }: { stats: Stat[] }) {
   return (
     <section className="py-20 sm:py-24 bg-gradient-to-b from-transparent via-brand-gold/5 to-transparent">
       <div className="container-wide">

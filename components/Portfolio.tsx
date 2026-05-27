@@ -1,14 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { portfolio } from "@/lib/data";
+import type { PortfolioItem } from "@/lib/queries";
 import { ArrowUpRight } from "lucide-react";
 import MediaTile from "@/components/MediaTile";
 
-export default function Portfolio() {
+export default function Portfolio({ portfolio }: { portfolio: PortfolioItem[] }) {
   const categories = useMemo(
     () => ["All", ...Array.from(new Set(portfolio.map((p) => p.category)))],
-    []
+    [portfolio]
   );
   const [active, setActive] = useState("All");
   const items = active === "All" ? portfolio : portfolio.filter((p) => p.category === active);

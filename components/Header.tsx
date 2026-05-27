@@ -15,22 +15,17 @@ const navItems = [
 
 export default function Header() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // On the homepage keep the bar transparent over the full-screen video hero,
-    // and only turn it solid once you scroll past the hero. Other pages switch
-    // to solid almost immediately for readability.
-    const onScroll = () => {
-      const threshold = isHome ? window.innerHeight * 0.85 : 20;
-      setScrolled(window.scrollY > threshold);
-    };
+    // Transparent at the very top so the hero video shows through; the solid
+    // bar appears as soon as you start scrolling down.
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -38,6 +33,8 @@ export default function Header() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname?.startsWith(href);
+
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <header
