@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Elvish Yadav",
+    "role": "Creator",
+    "quote": "FPS is innovative, reliable, and always exceeds expectations! A fantastic team to work with!",
+    "avatar": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Amir Trt",
+    "role": "Creator",
+    "quote": "FPS excels in video production and design, creating content that truly connects.",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Dharmendra Bilotia",
+    "role": "Creator",
+    "quote": "FPS is creative, professional, and delivers amazing results! Highly recommended!",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Alisha Rajput",
+    "role": "Creator",
+    "quote": "Top quality, smooth execution, and impressive results!",
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80"
+  }
+]

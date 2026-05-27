@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "slug": "graphic-design",
+    "title": "Graphic Design",
+    "tagline": "Detailed Picture",
+    "icon": "Palette",
+    "description": "Eye-catching posters, thumbnails, brand identity, and social media creatives crafted to make your message unmissable.",
+    "features": ["Poster & Thumbnail Design", "Brand Identity", "Social Media Creatives", "Print Collateral"]
+  },
+  {
+    "id": 2,
+    "slug": "video-production",
+    "title": "Video Production",
+    "tagline": "Visual Creativity",
+    "icon": "Video",
+    "description": "End-to-end video production from concept and scripting to shooting with cinematic gear and a creative crew.",
+    "features": ["Concept & Scripting", "Cinematic Shoots", "Direction", "On-set Production"]
+  },
+  {
+    "id": 3,
+    "slug": "audio-production",
+    "title": "Audio Production",
+    "tagline": "Emotions",
+    "icon": "Mic",
+    "description": "Studio-grade music production, voice-overs, sound design and mixing that gives your content the soul it deserves.",
+    "features": ["Music Production", "Voice-over", "Sound Design", "Mixing & Mastering"]
+  },
+  {
+    "id": 4,
+    "slug": "photography",
+    "title": "Photography",
+    "tagline": "Photo Designer",
+    "icon": "Camera",
+    "description": "Portrait, product, event, and brand photography that captures the moment and tells your story in a single frame.",
+    "features": ["Portrait", "Product", "Event", "Brand Shoots"]
+  },
+  {
+    "id": 5,
+    "slug": "video-editing",
+    "title": "Video Editing",
+    "tagline": "Video Identity",
+    "icon": "Film",
+    "description": "High-retention edits, color grading, motion graphics and VFX tuned for YouTube, reels and brand films.",
+    "features": ["Reels & Shorts", "YouTube Edits", "Color Grading", "Motion Graphics"]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Song",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
+    "video": "/videos/song.mp4"
+  },
+  {
+    "id": 2,
+    "title": "Comedy",
+    "image": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
+    "video": "/videos/comedy.mp4"
+  },
+  {
+    "id": 3,
+    "title": "Brand",
+    "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
+    "video": "/videos/brand.mp4"
+  },
+  {
+    "id": 4,
+    "title": "Vines",
+    "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80",
+    "video": "/videos/vines.mp4"
+  }
+]
