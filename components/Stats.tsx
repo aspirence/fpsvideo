@@ -35,27 +35,26 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
   }, []);
   const n = useCountUp(value, visible);
   return (
-    <div ref={ref} className="rounded-3xl border border-white/5 bg-brand-card p-6 sm:p-8 text-center">
-      <div className="font-display text-4xl sm:text-5xl font-extrabold text-white">
+    <div ref={ref} className="rounded-3xl border border-white/5 bg-brand-card p-4 sm:p-8 text-center">
+      <div className="font-display text-3xl sm:text-5xl font-extrabold text-white">
         {n}
         {suffix}
       </div>
-      <div className="mt-2 text-sm text-brand-muted">{label}</div>
+      <div className="mt-1 sm:mt-2 text-xs sm:text-sm text-brand-muted">{label}</div>
     </div>
   );
 }
 
 export default function Stats({ stats }: { stats: Stat[] }) {
   return (
-    <section className="py-20 sm:py-24 bg-gradient-to-b from-transparent via-brand-gold/5 to-transparent">
+    <section className="py-12 sm:py-24 bg-gradient-to-b from-transparent via-brand-gold/5 to-transparent">
       <div className="container-wide">
         <div className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow">Our Impact</span>
-          <h2 className="section-title mt-4">
+          <h2 className="section-title">
             Numbers that <span className="gradient-text">speak</span>
           </h2>
         </div>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {stats.map((s) => (
             <StatCard key={s.id} value={s.value} suffix={s.suffix} label={s.label} />
           ))}

@@ -26,7 +26,7 @@ export default function AdminClients() {
             </form>
             <form action={deleteClientAction}>
               <input type="hidden" name="id" value={c.id} />
-              <button className="px-2 text-sm text-red-400 hover:text-red-300">âœ•</button>
+              <button className="px-2 text-sm text-red-400 hover:text-red-300">✕</button>
             </form>
           </div>
         ))}

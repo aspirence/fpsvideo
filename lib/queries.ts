@@ -328,6 +328,35 @@ export function deleteInstagram(id: number) {
   getDb().prepare("DELETE FROM instagram WHERE id=?").run(id);
 }
 
+/* ===================== Messages (Contact form) ===================== */
+export type Message = {
+  id: number;
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+  received_at: string;
+};
+
+export function getMessages(): Message[] {
+  return getDb()
+    .prepare("SELECT * FROM messages ORDER BY id DESC")
+    .all() as Message[];
+}
+
+export function addMessage(d: Omit<Message, "id" | "received_at">) {
+  getDb()
+    .prepare(
+      "INSERT INTO messages (name, email, phone, service, message, received_at) VALUES (@name, @email, @phone, @service, @message, @received_at)"
+    )
+    .run({ ...d, received_at: new Date().toISOString() });
+}
+
+export function deleteMessage(id: number) {
+  getDb().prepare("DELETE FROM messages WHERE id=?").run(id);
+}
+
 /* ===================== Site ===================== */
 export type Site = {
   name: string;

@@ -12,8 +12,8 @@ const config: Config = {
           bg: "#0a0a0a",
           surface: "#121212",
           card: "#1a1a1a",
-          gold: "#dc2626",
-          goldDark: "#991b1b",
+          gold: "#ffffff",
+          goldDark: "#f5f5f5",
           text: "#f5f5f5",
           muted: "#a3a3a3"
         }

@@ -13,7 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
 export default function Services() {
   const services = getServices();
   return (
-    <section id="services" className="py-20 sm:py-28 bg-brand-surface/40 border-y border-white/5">
+    <section id="services" className="py-12 sm:py-28 bg-brand-surface/40 border-y border-white/5">
       <div className="container-wide">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           <span className="eyebrow">Our Services</span>

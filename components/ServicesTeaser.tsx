@@ -25,7 +25,7 @@ const coverFor = (title: string) =>
 
 export default function ServicesTeaser() {
   return (
-    <section className="starfield relative overflow-hidden py-24 sm:py-32">
+    <section className="starfield relative overflow-hidden py-14 sm:py-32">
       <div className="container-wide relative z-10">
         <div className="text-center">
           <span className="eyebrow">What we offer</span>
@@ -33,8 +33,8 @@ export default function ServicesTeaser() {
             Services
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-brand-muted">
-            Ek hi chhat ke neeche — concept se final delivery tak. Apni zarurat
-            ke hisaab se craft choose karo.
+            Everything under one roof — from concept to final delivery. Pick
+            the craft that fits your need.
           </p>
         </div>
 

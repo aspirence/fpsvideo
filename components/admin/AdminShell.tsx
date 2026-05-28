@@ -12,6 +12,7 @@ import {
   BarChart3,
   Upload,
   Instagram,
+  Mail,
   ExternalLink,
   LogOut
 } from "lucide-react";
@@ -24,6 +25,7 @@ const nav = [
   { label: "Services", href: "/admin/services", icon: Wrench },
   { label: "Originals", href: "/admin/originals", icon: Sparkles },
   { label: "Instagram", href: "/admin/instagram", icon: Instagram },
+  { label: "Messages", href: "/admin/messages", icon: Mail },
   { label: "Clients", href: "/admin/clients", icon: Users },
   { label: "Stats", href: "/admin/stats", icon: BarChart3 },
   { label: "Upload", href: "/admin/upload", icon: Upload }

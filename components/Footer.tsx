@@ -16,10 +16,10 @@ export default function Footer({
   if (pathname?.startsWith("/admin")) return null;
 
   return (
-    <footer className="border-t border-white/5 bg-black">
+    <footer className="bg-brand-bg">
       <div className="container-wide py-14 grid gap-10 md:grid-cols-4">
         <div>
-          <Link href="/" className="font-display text-2xl font-extrabold tracking-tight">
+          <Link href="/" className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             F<span className="gradient-text">PS</span>
           </Link>
           <p className="mt-4 text-sm text-brand-muted leading-relaxed">
@@ -56,33 +56,35 @@ export default function Footer({
           </div>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-white">
-            Services
-          </h4>
-          <ul className="mt-4 space-y-2 text-sm text-brand-muted">
-            {services.map((s) => (
-              <li key={s.id}>
-                <Link href="/services" className="hover:text-white transition">
-                  {s.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="grid grid-cols-2 gap-8 md:contents">
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-white">
+              Services
+            </h4>
+            <ul className="mt-4 space-y-2 text-sm text-brand-muted">
+              {services.map((s) => (
+                <li key={s.id}>
+                  <Link href="/services" className="hover:text-white transition">
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-widest text-white">
-            Company
-          </h4>
-          <ul className="mt-4 space-y-2 text-sm text-brand-muted">
-            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
-            <li><Link href="/portfolio" className="hover:text-white transition">Portfolio</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Careers</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-white transition">Terms &amp; Conditions</Link></li>
-          </ul>
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-widest text-white">
+              Company
+            </h4>
+            <ul className="mt-4 space-y-2 text-sm text-brand-muted">
+              <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+              <li><Link href="/portfolio" className="hover:text-white transition">Portfolio</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Careers</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Terms &amp; Conditions</Link></li>
+            </ul>
+          </div>
         </div>
 
         <div>

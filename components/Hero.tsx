@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -21,8 +21,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-black/10 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
-      <div className="container-wide relative z-10 pt-48 sm:pt-64 pb-8 flex-1">
-        <div className="max-w-3xl">
+      <div className="container-wide relative z-10 pt-60 sm:pt-64 pb-8 flex-1">
+        <div className="max-w-3xl text-center sm:text-left mx-auto sm:mx-0">
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
             A full-service production studio
           </span>
@@ -32,9 +32,9 @@ export default function Hero() {
             <span className="block gradient-text">Stories</span>
           </h1>
 
-          <div className="mt-6 flex items-center justify-center gap-3">
-            <span className="h-10 w-10 grid place-items-center rounded-full bg-brand-gold text-white font-bold text-sm shrink-0">
-              F
+          <div className="mt-6 flex items-center justify-center gap-3 sm:justify-start">
+            <span className="h-10 w-10 grid place-items-center rounded-full bg-white text-black shrink-0">
+              <Play size={14} fill="currentColor" className="translate-x-[1px]" />
             </span>
             <p className="text-xs sm:text-sm text-white/85">
               FPS &middot; Production house
@@ -49,8 +49,8 @@ export default function Hero() {
           photography for creators and brands that want to stand out.
         </p>
 
-        <Link href="/contact" className="btn-primary mt-5 text-xs">
-          Start your project <ArrowRight size={12} />
+        <Link href="/contact" className="btn-primary mt-6 px-8 py-3.5 text-base">
+          Start your project <ArrowRight size={16} />
         </Link>
       </div>
     </section>

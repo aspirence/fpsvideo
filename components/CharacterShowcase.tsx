@@ -15,7 +15,7 @@ export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
   const current = items[displayIndex];
 
   return (
-    <section className="cinematic-bg relative overflow-hidden py-20 sm:py-28">
+    <section className="cinematic-bg relative overflow-hidden py-12 sm:py-28">
       <div className="container-wide relative z-10">
         <span className="eyebrow">FPS Originals</span>
 

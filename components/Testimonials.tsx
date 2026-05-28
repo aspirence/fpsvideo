@@ -3,7 +3,7 @@ import { Quote, Star } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <div className="container-wide">
         <div className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Testimonials</span>

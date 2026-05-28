@@ -13,8 +13,7 @@ export default function AboutTeaser() {
     <section className="pt-20 pb-10 sm:pt-28 sm:pb-12">
       <div className="container-wide grid gap-12 lg:grid-cols-2 lg:items-start">
         <div>
-          <span className="eyebrow">Who We Are</span>
-          <h2 className="section-title mt-4">
+          <h2 className="section-title">
             FPS — Where <span className="gradient-text">Creativity</span>{" "}
             Meets Results
           </h2>

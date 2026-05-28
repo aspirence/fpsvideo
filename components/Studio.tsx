@@ -35,7 +35,7 @@ const pillars = [
 
 export default function Studio() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <div className="container-wide space-y-6 sm:space-y-8">
         {pillars.map((p, idx) => (
           <article

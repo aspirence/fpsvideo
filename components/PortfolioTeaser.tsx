@@ -6,7 +6,7 @@ import MediaTile from "@/components/MediaTile";
 export default function PortfolioTeaser() {
   const featured = getPortfolio().slice(0, 3);
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <div className="container-wide">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>

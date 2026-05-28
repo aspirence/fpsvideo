@@ -3,7 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 
-const faqs = [
+export type FaqItem = { q: string; a: string };
+
+const defaultFaqs: FaqItem[] = [
   {
     q: "How do I start a project with FPS?",
     a: "Just hit “Start a project” or drop us a message on the contact page. Tell us your idea, timeline and budget — we’ll get back within a day with a clear plan and quote."
@@ -30,85 +32,115 @@ const faqs = [
   }
 ];
 
-export default function FAQ() {
-  const [open, setOpen] = useState<number>(0);
-  const [shown, setShown] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+type Props = {
+  faqs?: FaqItem[];
+  heading?: string;
+};
 
+function useInView<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
   useEffect(() => {
-    const el = sectionRef.current;
+    const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setShown(true);
+          setInView(true);
           io.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+      { threshold: 0.2, rootMargin: "0px 0px -40px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
+  return { ref, inView };
+}
+
+function FaqCard({
+  item,
+  index,
+  isOpen,
+  onToggle
+}: {
+  item: FaqItem;
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const { ref, inView } = useInView<HTMLLIElement>();
+  return (
+    <li
+      ref={ref}
+      className={`overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-all duration-700 ease-out ${
+        inView
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6"
+      }`}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition hover:bg-white/[0.02]"
+      >
+        <span className="text-base font-semibold text-white sm:text-lg">
+          {item.q}
+        </span>
+        <Plus
+          size={22}
+          className={`shrink-0 text-white/80 transition-transform duration-300 ${
+            isOpen ? "rotate-45" : "rotate-0"
+          }`}
+        />
+      </button>
+      <div
+        className={`grid transition-all duration-400 ease-out ${
+          isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden px-6">
+          <p className="text-sm leading-relaxed text-brand-muted sm:text-base">
+            {item.a}
+          </p>
+        </div>
+      </div>
+    </li>
+  );
+}
+
+export default function FAQ({
+  faqs = defaultFaqs,
+  heading = "Everything you\nneed to know"
+}: Props) {
+  const [open, setOpen] = useState<number>(0);
+  const { ref: headingRef, inView: headingInView } = useInView<HTMLDivElement>();
 
   return (
-    <section ref={sectionRef} className="py-24 sm:py-32">
+    <section className="py-14 sm:py-32">
       <div className="container-wide grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
         <div
+          ref={headingRef}
           className={`transition-all duration-700 ease-out ${
-            shown ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+            headingInView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
           }`}
         >
-          <h2 className="text-4xl font-bold leading-[1.1] sm:text-5xl">
-            Everything you
-            <br />
-            need to know
+          <h2 className="whitespace-pre-line text-4xl font-bold leading-[1.1] sm:text-5xl">
+            {heading}
           </h2>
         </div>
 
         <ul className="space-y-3">
-          {faqs.map((f, i) => {
-            const isOpen = open === i;
-            return (
-              <li
-                key={i}
-                style={{ transitionDelay: shown ? `${150 + i * 120}ms` : "0ms" }}
-                className={`overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-all duration-700 ease-out ${
-                  shown
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-5"
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition hover:bg-white/[0.02]"
-                >
-                  <span className="text-base font-semibold text-white sm:text-lg">
-                    {f.q}
-                  </span>
-                  <Plus
-                    size={22}
-                    className={`shrink-0 text-white/80 transition-transform duration-300 ${
-                      isOpen ? "rotate-45" : "rotate-0"
-                    }`}
-                  />
-                </button>
-                <div
-                  className={`grid transition-all duration-400 ease-out ${
-                    isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
-                  }`}
-                >
-                  <div className="overflow-hidden px-6">
-                    <p className="text-sm leading-relaxed text-brand-muted sm:text-base">
-                      {f.a}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
+          {faqs.map((f, i) => (
+            <FaqCard
+              key={i}
+              item={f}
+              index={i}
+              isOpen={open === i}
+              onToggle={() => setOpen(open === i ? -1 : i)}
+            />
+          ))}
         </ul>
       </div>
     </section>

@@ -18,49 +18,15 @@ export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) 
   };
 
   return (
-    <section className="cinematic-bg relative overflow-hidden py-24 sm:py-32">
-      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(280px,32%)_1fr] lg:items-center lg:gap-8 lg:px-8">
-        {/* Left: title + copy + controls */}
-        <div className="max-w-md">
-          <span className="text-xs uppercase tracking-[0.3em] text-white/90">
-            Selected Work
-          </span>
+    <section className="cinematic-bg relative overflow-hidden py-14 sm:py-32">
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 sm:gap-8 lg:grid-cols-[minmax(280px,32%)_1fr] lg:items-start lg:gap-10 lg:px-8">
+        {/* Heading */}
+        <h2 className="order-1 text-4xl font-bold leading-[1.05] text-white sm:text-6xl lg:order-none lg:col-start-1 lg:row-start-1">
+          Work that <span className="text-white/80">lingers</span>
+        </h2>
 
-          <h2 className="mt-5 text-5xl font-bold leading-[1.05] text-white sm:text-6xl">
-            Work that <span className="text-white/80">lingers</span>
-          </h2>
-
-          <p className="mt-6 text-sm leading-relaxed text-brand-muted">
-            Har frame ek kahani kehta hai. Films, edits, design aur photography —
-            har project ko detail se craft kiya gaya hai taaki wo dekhne waale ke
-            zehan mein reh jaaye. Cards ko slide karke explore karo.
-          </p>
-
-          <div className="mt-8 flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => scrollBy(-1)}
-              aria-label="Previous"
-              className="grid h-14 w-12 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
-            >
-              <ArrowLeft size={18} />
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollBy(1)}
-              aria-label="Next"
-              className="grid h-14 w-12 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </div>
-        </div>
-
-        {/* Right: horizontal scrolling cards. min-w-0 is required so this grid
-            column respects its track width instead of stretching to fit all
-            cards — without it the row overflows the container AND the scroll
-            buttons have nothing to scroll. */}
-        <div className="relative min-w-0">
+        {/* Carousel — between heading and paragraph on mobile; right column on desktop spanning rows */}
+        <div className="order-2 relative min-w-0 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-3">
           <div
             ref={trackRef}
             className="no-scrollbar -mx-4 flex min-w-0 snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:px-0"
@@ -96,6 +62,33 @@ export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) 
           {/* Edge fades so the peeking next card dissolves into the dark
               instead of a hard cut. Scroll-snap brings each card fully into view. */}
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#060606] via-[#060606]/70 to-transparent sm:w-28" />
+        </div>
+
+        {/* Paragraph */}
+        <p className="order-3 text-sm leading-relaxed text-brand-muted lg:order-none lg:col-start-1 lg:row-start-2">
+          Every frame tells a story. Films, edits, design and photography —
+          each project is crafted in detail so it stays with the viewer long
+          after. Slide through the cards to explore.
+        </p>
+
+        {/* Arrows */}
+        <div className="order-4 flex items-center gap-3 lg:order-none lg:col-start-1 lg:row-start-3">
+          <button
+            type="button"
+            onClick={() => scrollBy(-1)}
+            aria-label="Previous"
+            className="grid h-16 w-12 place-items-center rounded-full border border-white/25 bg-white/5 text-white shadow-xl backdrop-blur-md transition hover:bg-white/15"
+          >
+            <ArrowLeft size={18} />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollBy(1)}
+            aria-label="Next"
+            className="grid h-16 w-12 place-items-center rounded-full border border-white/25 bg-white/5 text-white shadow-xl backdrop-blur-md transition hover:bg-white/15"
+          >
+            <ArrowRight size={18} />
+          </button>
         </div>
       </div>
     </section>

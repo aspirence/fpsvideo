@@ -9,7 +9,7 @@ export default function InstagramFeed() {
   if (posts.length === 0) return null;
 
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-28">
       <div className="container-wide">
         <div className="text-center">
           <span className="eyebrow inline-flex items-center gap-2">

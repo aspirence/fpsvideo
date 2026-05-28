@@ -89,6 +89,12 @@ function migrate(db: Database.Database) {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       url TEXT, image TEXT, alt TEXT, sort INTEGER DEFAULT 0
     );
+
+    CREATE TABLE IF NOT EXISTS messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT, email TEXT, phone TEXT, service TEXT, message TEXT,
+      received_at TEXT
+    );
   `);
 }
 

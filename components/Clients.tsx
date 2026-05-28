@@ -8,8 +8,7 @@ export default function Clients() {
       <div className="container-wide">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
-            <span className="eyebrow">Trusted by</span>
-            <h2 className="mt-3 font-display text-2xl sm:text-3xl font-bold tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight">
               Creators &amp; brands we've <span className="gradient-text">worked with</span>
             </h2>
           </div>

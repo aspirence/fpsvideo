@@ -35,7 +35,7 @@ export default function PageHeader({
       {!image && <div className="absolute inset-0 hero-grid" />}
       <div
         className="absolute -top-32 left-1/2 -translate-x-1/2 h-[360px] w-[700px] rounded-full blur-3xl opacity-20"
-        style={{ background: "radial-gradient(closest-side, #dc2626, transparent)" }}
+        style={{ background: "radial-gradient(closest-side, rgba(255,255,255,0.18), transparent)" }}
       />
 
       <div className="container-wide relative flex min-h-[46vh] flex-col justify-end pt-36 pb-14 sm:min-h-[54vh] sm:pt-44 sm:pb-16">

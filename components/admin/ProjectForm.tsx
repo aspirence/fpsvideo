@@ -104,7 +104,7 @@ export default function ProjectForm({ project }: { project?: Project }) {
                 aria-label="Remove clip"
                 className="px-2 text-red-400 transition hover:text-red-300"
               >
-                âœ•
+                ✕
               </button>
             </div>
           ))}

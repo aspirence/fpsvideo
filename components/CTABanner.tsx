@@ -13,13 +13,9 @@ export default function CTABanner({
   ctaHref?: string;
 }) {
   return (
-    <section className="py-20 sm:py-24">
+    <section className="py-12 sm:py-24">
       <div className="container-wide">
-        <div className="relative overflow-hidden rounded-3xl border border-brand-gold/30 bg-gradient-to-br from-brand-gold/15 via-brand-card to-brand-card p-8 sm:p-14 text-center">
-          <div
-            className="absolute -top-20 -right-20 h-72 w-72 rounded-full blur-3xl opacity-30"
-            style={{ background: "radial-gradient(closest-side, #dc2626, transparent)" }}
-          />
+        <div className="relative overflow-hidden border border-white/10 bg-brand-surface p-8 sm:p-14 text-center">
           <div className="relative">
             <h2 className="font-display text-3xl sm:text-5xl font-extrabold tracking-tight max-w-2xl mx-auto">
               {title}

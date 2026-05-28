@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Shubham Srivastava",
+    "email": "shubhamsri499@gmail.com",
+    "phone": "9987856452",
+    "service": "Video Editing",
+    "message": "bnib nbb bkbbn",
+    "receivedAt": "2026-05-28T08:23:04.144Z"
+  },
+  {
+    "email": "test@example.com",
+    "message": "Sample project brief",
+    "name": "Test User",
+    "service": "Video Production",
+    "phone": "+91 9999",
+    "receivedAt": "2026-05-28T08:24:49.239Z"
+  }
+]

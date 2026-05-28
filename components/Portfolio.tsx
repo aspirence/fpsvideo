@@ -14,7 +14,7 @@ export default function Portfolio({ portfolio }: { portfolio: PortfolioItem[] })
   const items = active === "All" ? portfolio : portfolio.filter((p) => p.category === active);
 
   return (
-    <section id="portfolio" className="py-20 sm:py-28">
+    <section id="portfolio" className="py-12 sm:py-28">
       <div className="container-wide">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>

@@ -27,6 +27,7 @@ import {
   deleteBts,
   saveInstagram,
   deleteInstagram,
+  deleteMessage,
   type ProjectInput
 } from "@/lib/queries";
 
@@ -247,4 +248,11 @@ export async function deleteInstagramAction(formData: FormData) {
   assertAuthed();
   deleteInstagram(Number(formData.get("id") ?? 0));
   refresh("/admin/instagram");
+}
+
+/* ---------- Messages (Contact form submissions) ---------- */
+export async function deleteMessageAction(formData: FormData) {
+  assertAuthed();
+  deleteMessage(Number(formData.get("id") ?? 0));
+  revalidatePath("/admin/messages");
 }

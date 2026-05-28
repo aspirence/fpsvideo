@@ -21,11 +21,10 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-28">
+    <section id="about" className="py-12 sm:py-28">
       <div className="container-wide grid gap-12 lg:grid-cols-2 items-center">
         <div>
-          <span className="eyebrow">Who We Are</span>
-          <h2 className="section-title mt-4">
+          <h2 className="section-title">
             FPS — Where <span className="gradient-text">Creativity</span>{" "}
             Meets Results
           </h2>
