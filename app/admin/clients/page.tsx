@@ -20,13 +20,13 @@ export default function AdminClients() {
             <form action={saveClientAction} className="flex flex-1 gap-2">
               <input type="hidden" name="id" value={c.id} />
               <input name="name" defaultValue={c.name} className={inp} />
-              <button className="border border-white/15 px-4 text-sm hover:border-brand-gold hover:text-brand-gold">
+              <button className="border border-white/15 px-4 text-sm hover:border-brand-gold hover:text-white">
                 Save
               </button>
             </form>
             <form action={deleteClientAction}>
               <input type="hidden" name="id" value={c.id} />
-              <button className="px-2 text-sm text-red-400 hover:text-red-300">✕</button>
+              <button className="px-2 text-sm text-red-400 hover:text-red-300">âœ•</button>
             </form>
           </div>
         ))}

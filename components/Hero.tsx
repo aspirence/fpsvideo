@@ -24,7 +24,7 @@ export default function Hero() {
       <div className="container-wide relative z-10 pt-48 sm:pt-64 pb-8 flex-1">
         <div className="max-w-3xl">
           <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-            A production house from Agra
+            A full-service production studio
           </span>
 
           <h1 className="hero-title mt-4 font-normal text-[clamp(2.25rem,8vw,6rem)] leading-[0.9] tracking-tight uppercase text-white">
@@ -44,19 +44,13 @@ export default function Hero() {
       </div>
 
       <div className="container-wide relative z-10 pb-10 sm:pb-14 text-center">
-        <p className="text-xs sm:text-sm text-white/75 max-w-xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
           A full-service media production house — video, design, audio and
           photography for creators and brands that want to stand out.
         </p>
 
-        <Link
-          href="/contact"
-          className="group relative mt-5 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-xs font-semibold text-black transition-colors duration-300"
-        >
-          <span className="pointer-events-none absolute bottom-0 left-1/2 z-0 aspect-square w-[135%] -translate-x-1/2 translate-y-1/2 scale-0 rounded-full bg-emerald-400 transition-transform duration-500 ease-out group-hover:scale-100" />
-          <span className="relative z-10 inline-flex items-center gap-2">
-            Start your project <ArrowRight size={12} />
-          </span>
+        <Link href="/contact" className="btn-primary mt-5 text-xs">
+          Start your project <ArrowRight size={12} />
         </Link>
       </div>
     </section>

@@ -53,11 +53,11 @@ export default function ServicesTeaser() {
                     className="absolute inset-0 h-full w-full object-cover grayscale-[40%] transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-                  <span className="absolute left-4 top-4 grid h-10 w-10 place-items-center border border-white/15 bg-black/50 text-brand-gold backdrop-blur">
+                  <span className="absolute left-4 top-4 grid h-10 w-10 place-items-center border border-white/15 bg-black/50 text-white backdrop-blur">
                     <Icon size={18} />
                   </span>
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <span className="text-[10px] uppercase tracking-[0.25em] text-brand-gold/90">
+                    <span className="text-[10px] uppercase tracking-[0.25em] text-white/90">
                       {s.tagline}
                     </span>
                     <h3 className="mt-1 font-display text-xl font-bold text-white">
@@ -77,16 +77,13 @@ export default function ServicesTeaser() {
                         key={f}
                         className="flex items-center gap-2 text-sm text-white/85"
                       >
-                        <Check size={15} className="shrink-0 text-brand-gold" />
+                        <Check size={15} className="shrink-0 text-white" />
                         {f}
                       </li>
                     ))}
                   </ul>
 
-                  <Link
-                    href="/contact"
-                    className="mt-7 inline-flex items-center justify-center gap-2 border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-brand-gold hover:bg-brand-gold hover:text-black"
-                  >
+                  <Link href="/contact" className="btn-primary mt-7">
                     Start a project
                     <ArrowUpRight size={15} />
                   </Link>

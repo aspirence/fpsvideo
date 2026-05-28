@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Cormorant+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
   --bg: #0a0a0a;
-  --gold: #3b82f6;
+  --gold: #dc2626;
 }
 
 html {
@@ -20,15 +20,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Paragraph body text uses Hanken Grotesk (Aeonik-style geometric grotesque) */
 p {
-  font-family: 'Hanken Grotesk', 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.65;
 }
 
-/* All headings use Space Grotesk — modern, premium display font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', 'Poppins', system-ui, sans-serif !important;
-  letter-spacing: -0.02em;
+  font-family: 'Playfair Display', Georgia, 'Cormorant Garamond', serif !important;
+  letter-spacing: -0.01em;
 }
 
 /* The hero title keeps the original condensed font (Bebas Neue) */
@@ -62,20 +63,38 @@ h1, h2, h3, h4, h5, h6 {
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-goldDark hover:shadow-[0_0_30px_rgba(59,130,246,0.45)];
-  }
+  .btn-primary,
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-brand-gold hover:text-brand-gold;
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black transition-colors duration-300;
+    isolation: isolate;
+  }
+  .btn-primary::before,
+  .btn-ghost::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    aspect-ratio: 1 / 1;
+    width: 135%;
+    transform: translate(-50%, 50%) scale(0);
+    border-radius: 9999px;
+    background-color: #34d399; /* emerald-400 */
+    transition: transform 500ms ease-out;
+    pointer-events: none;
+  }
+  .btn-primary:hover::before,
+  .btn-ghost:hover::before {
+    transform: translate(-50%, 50%) scale(1);
   }
   .section-title {
     @apply font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight;
   }
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold;
+    @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-white font-semibold;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-gold via-sky-300 to-brand-gold bg-clip-text text-transparent;
+    @apply text-white;
   }
 }
 
@@ -108,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
     radial-gradient(1.5px 1.5px at 50% 50%, rgba(255, 255, 255, 0.65) 50%, transparent 51%),
     radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.45) 50%, transparent 51%),
     radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.3) 50%, transparent 51%),
-    radial-gradient(900px 500px at 50% -10%, rgba(59, 130, 246, 0.12), transparent 60%);
+    radial-gradient(900px 500px at 50% -10%, rgba(220, 38, 38, 0.12), transparent 60%);
   background-size: 140px 140px, 90px 110px, 60px 70px, 100% 100%;
   background-position: 0 0, 35px 60px, 70px 20px, 0 0;
 }
@@ -124,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 .cinematic-bg {
   background:
     radial-gradient(120% 80% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 55%),
-    radial-gradient(100% 100% at 50% 120%, rgba(59, 130, 246, 0.07) 0%, transparent 60%),
+    radial-gradient(100% 100% at 50% 120%, rgba(220, 38, 38, 0.07) 0%, transparent 60%),
     #060606;
 }
 .cinematic-bg::before {
@@ -138,8 +157,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(220, 38, 38, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 38, 38, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(ellipse at center, #000 35%, transparent 75%);
 }

@@ -25,7 +25,7 @@ export default function Clients() {
               key={c.id}
               className="bg-brand-bg group grid place-items-center h-24 sm:h-28 transition hover:bg-brand-card"
             >
-              <span className="font-display text-lg sm:text-xl font-semibold text-white/40 group-hover:text-brand-gold transition tracking-tight">
+              <span className="font-display text-lg sm:text-xl font-semibold text-white/40 group-hover:text-white transition tracking-tight">
                 {c.name}
               </span>
             </li>

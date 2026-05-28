@@ -22,14 +22,12 @@ export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) 
       <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(280px,32%)_1fr] lg:items-center lg:gap-8 lg:px-8">
         {/* Left: title + copy + controls */}
         <div className="max-w-md">
-          <span className="text-xs uppercase tracking-[0.3em] text-brand-gold/90">
+          <span className="text-xs uppercase tracking-[0.3em] text-white/90">
             Selected Work
           </span>
 
-          <h2 className="mt-5 font-serif text-5xl font-medium leading-[1.05] text-white sm:text-6xl">
-            Work that
-            <br />
-            <span className="italic text-white/80">lingers</span>
+          <h2 className="mt-5 text-5xl font-bold leading-[1.05] text-white sm:text-6xl">
+            Work that <span className="text-white/80">lingers</span>
           </h2>
 
           <p className="mt-6 text-sm leading-relaxed text-brand-muted">
@@ -43,17 +41,17 @@ export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) 
               type="button"
               onClick={() => scrollBy(-1)}
               aria-label="Previous"
-              className="grid h-11 w-11 place-items-center border border-white/15 text-white/80 transition hover:border-brand-gold hover:text-brand-gold"
+              className="grid h-14 w-12 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
             >
-              <ArrowLeft size={16} />
+              <ArrowLeft size={18} />
             </button>
             <button
               type="button"
               onClick={() => scrollBy(1)}
               aria-label="Next"
-              className="grid h-11 w-11 place-items-center border border-white/15 text-white/80 transition hover:border-brand-gold hover:text-brand-gold"
+              className="grid h-14 w-12 place-items-center rounded-[16px] border border-white/20 bg-white/10 text-white shadow-lg backdrop-blur-md transition hover:bg-white/20"
             >
-              <ArrowRight size={16} />
+              <ArrowRight size={18} />
             </button>
           </div>
         </div>
@@ -87,7 +85,7 @@ export default function Showcase({ portfolio }: { portfolio: PortfolioItem[] }) 
                 <h3 className="font-serif text-2xl font-medium leading-tight text-white">
                   {item.title}
                 </h3>
-                <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-brand-gold/80">
+                <span className="mt-1 block text-xs uppercase tracking-[0.2em] text-white/80">
                   {item.category}
                 </span>
               </div>

@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Song",
+    "title": "Songs",
     "label": "Music Videos",
     "description": "Music videos and song promos — performance shoots, lip-sync setups and rhythm-driven edits that make every track pop on screen.",
     "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
-    "video": "/videos/song.mp4"
+    "video": "/videos/music-project.mp4"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "label": "Sketches & Skits",
     "description": "Comedy sketches and shorts — tight scripting, punchy timing and edits engineered for laughs, replays and shares.",
     "image": "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80",
-    "video": "/videos/comedy.mp4"
+    "video": "/videos/comedy-project.mp4"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "label": "Brand Films",
     "description": "Brand films and ad campaigns — story-first commercials that sell the idea without ever feeling like an ad.",
     "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
-    "video": "/videos/brand.mp4"
+    "video": "/videos/film-project.mp4"
   },
   {
     "id": 4,
@@ -29,6 +29,6 @@
     "label": "Reels & Shorts",
     "description": "Short-form reels and vines — snackable, scroll-stopping content tuned for Instagram Reels and YouTube Shorts.",
     "image": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
-    "video": "/videos/vines.mp4"
+    "video": "/videos/visual-project.mp4"
   }
 ]

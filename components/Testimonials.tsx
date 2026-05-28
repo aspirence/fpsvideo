@@ -22,7 +22,7 @@ export default function Testimonials() {
               key={t.id}
               className="rounded-3xl border border-white/5 bg-brand-card p-6 flex flex-col"
             >
-              <Quote className="text-brand-gold" size={28} />
+              <Quote className="text-white" size={28} />
               <blockquote className="mt-4 text-sm leading-relaxed text-white/90 flex-1">
                 {t.quote}
               </blockquote>
@@ -39,7 +39,7 @@ export default function Testimonials() {
                   <p className="text-xs text-brand-muted">{t.role}</p>
                 </div>
               </div>
-              <div className="mt-4 flex gap-0.5 text-brand-gold">
+              <div className="mt-4 flex gap-0.5 text-white">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} size={14} fill="currentColor" />
                 ))}

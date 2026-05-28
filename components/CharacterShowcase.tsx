@@ -8,9 +8,11 @@ import MediaTile from "@/components/MediaTile";
 
 export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
   const [active, setActive] = useState(0);
+  const [hovered, setHovered] = useState<number | null>(null);
   const items = bts;
   if (!items.length) return null;
-  const current = items[active];
+  const displayIndex = hovered ?? active;
+  const current = items[displayIndex];
 
   return (
     <section className="cinematic-bg relative overflow-hidden py-20 sm:py-28">
@@ -20,7 +22,7 @@ export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
         <div className="mt-8 grid items-center gap-8 lg:grid-cols-12">
           {/* Left: details for the active original */}
           <div className="order-2 max-w-md lg:order-1 lg:col-span-4">
-            <span className="text-xs uppercase tracking-[0.3em] text-brand-gold/90">
+            <span className="text-xs uppercase tracking-[0.3em] text-white/90">
               {current.label}
             </span>
             <h2
@@ -35,10 +37,7 @@ export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
             >
               {current.description}
             </p>
-            <Link
-              href="/portfolio"
-              className="mt-8 inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-brand-gold hover:bg-brand-gold hover:text-black"
-            >
+            <Link href="/portfolio" className="btn-primary mt-8">
               View originals
               <ArrowUpRight size={15} />
             </Link>
@@ -61,25 +60,33 @@ export default function CharacterShowcase({ bts }: { bts: Bts[] }) {
 
           {/* Thumbnail selector — horizontal on mobile, vertical column on desktop */}
           <div className="no-scrollbar order-3 flex gap-3 overflow-x-auto lg:col-span-2 lg:flex-col lg:overflow-visible">
-            {items.map((item, i) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActive(i)}
-                aria-label={item.title}
-                className={`relative aspect-video w-28 shrink-0 overflow-hidden border transition lg:w-auto ${
-                  i === active
-                    ? "border-brand-gold opacity-100"
-                    : "border-white/10 opacity-50 hover:opacity-90"
-                }`}
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </button>
-            ))}
+            {items.map((item, i) => {
+              const isShown = displayIndex === i;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setActive(i)}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
+                  onFocus={() => setHovered(i)}
+                  onBlur={() => setHovered(null)}
+                  aria-label={item.title}
+                  className={`relative aspect-video w-28 shrink-0 overflow-hidden border transition lg:w-auto ${
+                    isShown
+                      ? "border-brand-gold opacity-100"
+                      : "border-white/10 opacity-50 hover:opacity-90"
+                  }`}
+                >
+                  <MediaTile
+                    image={item.image}
+                    video={item.video}
+                    alt={item.title}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

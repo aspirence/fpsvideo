@@ -40,12 +40,12 @@ export default function AdminDashboard() {
             className="group border border-white/10 bg-brand-surface p-6 transition hover:border-brand-gold/40 hover:bg-white/[0.03]"
           >
             <div className="flex items-start justify-between">
-              <span className="grid h-11 w-11 place-items-center border border-white/10 bg-brand-gold/10 text-brand-gold">
+              <span className="grid h-11 w-11 place-items-center border border-white/10 bg-brand-gold/10 text-white">
                 <card.icon size={20} />
               </span>
               <ArrowUpRight
                 size={18}
-                className="text-white/25 transition group-hover:text-brand-gold"
+                className="text-white/25 transition group-hover:text-white"
               />
             </div>
             <div className="mt-5 text-4xl font-bold tabular-nums text-white">
@@ -64,13 +64,13 @@ export default function AdminDashboard() {
         <div className="flex flex-wrap gap-3">
           <Link
             href="/admin/projects/new"
-            className="inline-flex items-center gap-2 border border-white/15 bg-brand-surface px-5 py-3 text-sm font-medium transition hover:border-brand-gold hover:text-brand-gold"
+            className="inline-flex items-center gap-2 border border-white/15 bg-brand-surface px-5 py-3 text-sm font-medium transition hover:border-brand-gold hover:text-white"
           >
             <Plus size={16} /> New project
           </Link>
           <Link
             href="/admin/upload"
-            className="inline-flex items-center gap-2 border border-white/15 bg-brand-surface px-5 py-3 text-sm font-medium transition hover:border-brand-gold hover:text-brand-gold"
+            className="inline-flex items-center gap-2 border border-white/15 bg-brand-surface px-5 py-3 text-sm font-medium transition hover:border-brand-gold hover:text-white"
           >
             <Upload size={16} /> Upload media
           </Link>

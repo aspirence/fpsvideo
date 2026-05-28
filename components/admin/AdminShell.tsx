@@ -11,6 +11,7 @@ import {
   Users,
   BarChart3,
   Upload,
+  Instagram,
   ExternalLink,
   LogOut
 } from "lucide-react";
@@ -22,6 +23,7 @@ const nav = [
   { label: "Portfolio", href: "/admin/portfolio", icon: ImageIcon },
   { label: "Services", href: "/admin/services", icon: Wrench },
   { label: "Originals", href: "/admin/originals", icon: Sparkles },
+  { label: "Instagram", href: "/admin/instagram", icon: Instagram },
   { label: "Clients", href: "/admin/clients", icon: Users },
   { label: "Stats", href: "/admin/stats", icon: BarChart3 },
   { label: "Upload", href: "/admin/upload", icon: Upload }
@@ -44,7 +46,7 @@ export default function AdminShell({
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col border-r border-white/10 bg-brand-surface/70 backdrop-blur lg:flex">
         <div className="flex h-16 items-center border-b border-white/10 px-6">
           <span className="font-display text-lg font-extrabold tracking-tight">
-            FPS <span className="text-brand-gold">Admin</span>
+            FPS <span className="text-white">Admin</span>
           </span>
         </div>
         <nav className="flex-1 space-y-1 overflow-y-auto p-3">
@@ -56,7 +58,7 @@ export default function AdminShell({
                 href={n.href}
                 className={`flex items-center gap-3 px-3 py-2.5 text-sm font-medium transition ${
                   active
-                    ? "bg-brand-gold/15 text-brand-gold"
+                    ? "bg-brand-gold/15 text-white"
                     : "text-white/70 hover:bg-white/5 hover:text-white"
                 }`}
               >
@@ -85,14 +87,14 @@ export default function AdminShell({
       {/* Mobile top bar */}
       <div className="no-scrollbar sticky top-0 z-40 flex items-center gap-4 overflow-x-auto border-b border-white/10 bg-brand-surface/90 px-4 py-3 backdrop-blur lg:hidden">
         <span className="mr-1 font-display font-extrabold">
-          FPS<span className="text-brand-gold">·</span>
+          FPS<span className="text-white">Â·</span>
         </span>
         {nav.map((n) => (
           <Link
             key={n.href}
             href={n.href}
             className={`whitespace-nowrap text-sm ${
-              isActive(n.href) ? "text-brand-gold" : "text-white/70"
+              isActive(n.href) ? "text-white" : "text-white/70"
             }`}
           >
             {n.label}

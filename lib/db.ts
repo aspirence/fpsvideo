@@ -10,6 +10,7 @@ import testimonialsJson from "@/data/testimonials.json";
 import statsJson from "@/data/stats.json";
 import btsJson from "@/data/bts.json";
 import clientsJson from "@/data/clients.json";
+import instagramJson from "@/data/instagram.json";
 import siteJson from "@/data/site.json";
 
 const DB_PATH = path.join(process.cwd(), "data", "app.db");
@@ -82,6 +83,11 @@ function migrate(db: Database.Database) {
     CREATE TABLE IF NOT EXISTS clients (
       id INTEGER PRIMARY KEY,
       name TEXT, sort INTEGER DEFAULT 0
+    );
+
+    CREATE TABLE IF NOT EXISTS instagram (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      url TEXT, image TEXT, alt TEXT, sort INTEGER DEFAULT 0
     );
   `);
 }
@@ -234,6 +240,20 @@ function seedIfEmpty(db: Database.Database) {
       );
       (clientsJson as any[]).forEach((x, i) =>
         ins.run({ id: x.id, name: x.name, sort: i })
+      );
+    }
+
+    if (isEmpty(db, "instagram")) {
+      const ins = db.prepare(
+        `INSERT INTO instagram (url, image, alt, sort) VALUES (@url, @image, @alt, @sort)`
+      );
+      (instagramJson as any[]).forEach((x, i) =>
+        ins.run({
+          url: x.url,
+          image: x.image,
+          alt: x.alt ?? "",
+          sort: i
+        })
       );
     }
   });

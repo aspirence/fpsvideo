@@ -7,13 +7,15 @@ type Props = {
   delay?: number;
   as?: keyof JSX.IntrinsicElements;
   className?: string;
+  repeat?: boolean;
 };
 
 export default function Reveal({
   children,
   delay = 0,
   as: Tag = "div",
-  className = ""
+  className = "",
+  repeat = false
 }: Props) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -25,14 +27,16 @@ export default function Reveal({
       ([entry]) => {
         if (entry.isIntersecting) {
           setShown(true);
-          io.disconnect();
+          if (!repeat) io.disconnect();
+        } else if (repeat) {
+          setShown(false);
         }
       },
       { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [repeat]);
 
   const Component = Tag as any;
   return (

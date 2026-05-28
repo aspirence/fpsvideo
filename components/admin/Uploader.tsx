@@ -27,7 +27,7 @@ export default function Uploader() {
         Upload an image or video, then copy the path and paste it into any
         media field (project / portfolio / originals).
       </p>
-      <label className="inline-flex cursor-pointer items-center border border-white/15 px-5 py-3 text-sm text-white/80 transition hover:border-brand-gold hover:text-brand-gold">
+      <label className="inline-flex cursor-pointer items-center border border-white/15 px-5 py-3 text-sm text-white/80 transition hover:border-brand-gold hover:text-white">
         {busy ? "Uploading…" : "Choose a file"}
         <input
           type="file"
@@ -43,7 +43,7 @@ export default function Uploader() {
             readOnly
             value={url}
             onFocus={(e) => e.currentTarget.select()}
-            className="w-full border border-white/10 bg-black/40 px-3 py-2.5 text-sm text-brand-gold"
+            className="w-full border border-white/10 bg-black/40 px-3 py-2.5 text-sm text-white"
           />
           <div className="mt-3 max-w-sm overflow-hidden border border-white/10">
             {isVideo ? (

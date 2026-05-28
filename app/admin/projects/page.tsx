@@ -28,7 +28,7 @@ export default function AdminProjects() {
             <div className="flex items-center gap-4 text-sm">
               <Link
                 href={`/admin/projects/${p.id}`}
-                className="font-semibold text-brand-gold"
+                className="font-semibold text-white"
               >
                 Edit
               </Link>

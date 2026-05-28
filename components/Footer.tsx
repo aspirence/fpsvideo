@@ -63,7 +63,7 @@ export default function Footer({
           <ul className="mt-4 space-y-2 text-sm text-brand-muted">
             {services.map((s) => (
               <li key={s.id}>
-                <Link href="/services" className="hover:text-brand-gold transition">
+                <Link href="/services" className="hover:text-white transition">
                   {s.title}
                 </Link>
               </li>
@@ -76,12 +76,12 @@ export default function Footer({
             Company
           </h4>
           <ul className="mt-4 space-y-2 text-sm text-brand-muted">
-            <li><Link href="/about" className="hover:text-brand-gold transition">About Us</Link></li>
-            <li><Link href="/portfolio" className="hover:text-brand-gold transition">Portfolio</Link></li>
-            <li><Link href="/contact" className="hover:text-brand-gold transition">Contact Us</Link></li>
-            <li><Link href="#" className="hover:text-brand-gold transition">Careers</Link></li>
-            <li><Link href="#" className="hover:text-brand-gold transition">Privacy Policy</Link></li>
-            <li><Link href="#" className="hover:text-brand-gold transition">Terms &amp; Conditions</Link></li>
+            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+            <li><Link href="/portfolio" className="hover:text-white transition">Portfolio</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+            <li><Link href="#" className="hover:text-white transition">Careers</Link></li>
+            <li><Link href="#" className="hover:text-white transition">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-white transition">Terms &amp; Conditions</Link></li>
           </ul>
         </div>
 
@@ -91,8 +91,8 @@ export default function Footer({
           </h4>
           <ul className="mt-4 space-y-3 text-sm text-brand-muted">
             <li className="flex gap-3 items-center">
-              <Mail size={16} className="shrink-0 text-brand-gold" />
-              <a href={`mailto:${site.contact.email}`} className="hover:text-brand-gold transition">
+              <Mail size={16} className="shrink-0 text-white" />
+              <a href={`mailto:${site.contact.email}`} className="hover:text-white transition">
                 {site.contact.email}
               </a>
             </li>
@@ -103,7 +103,7 @@ export default function Footer({
       <div className="border-t border-white/5">
         <div className="container-wide py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-muted">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Crafted with passion in Agra, India.</p>
+          <p>Crafted with passion, frame by frame.</p>
         </div>
       </div>
     </footer>

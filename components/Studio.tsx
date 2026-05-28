@@ -57,10 +57,7 @@ export default function Studio() {
                 ))}
               </div>
 
-              <Link
-                href={p.href}
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white/[0.06] hover:bg-brand-gold border border-white/10 hover:border-brand-gold px-5 py-3 text-sm font-semibold text-white hover:text-black transition group/cta"
-              >
+              <Link href={p.href} className="btn-primary mt-8 group/cta">
                 {p.cta}
                 <ArrowUpRight
                   size={16}

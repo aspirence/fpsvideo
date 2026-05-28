@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Plus } from "lucide-react";
 
 const faqs = [
   {
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "Where are you based, and do you work remotely?",
-    a: "We’re based in Agra, India, and work with creators and brands across the country — on-location shoots as well as fully remote edit, design and audio projects."
+    a: "We work with creators and brands across India — on-location shoots as well as fully remote edit, design and audio projects."
   },
   {
     q: "How long does a typical project take?",
@@ -32,47 +32,76 @@ const faqs = [
 
 export default function FAQ() {
   const [open, setOpen] = useState<number>(0);
+  const [shown, setShown] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -80px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-12 text-center">
-          <span className="eyebrow">FAQ</span>
-          <h2 className="section-title mt-3">
-            Questions, <span className="gradient-text">answered</span>
+    <section ref={sectionRef} className="py-24 sm:py-32">
+      <div className="container-wide grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
+        <div
+          className={`transition-all duration-700 ease-out ${
+            shown ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+          }`}
+        >
+          <h2 className="text-4xl font-bold leading-[1.1] sm:text-5xl">
+            Everything you
+            <br />
+            need to know
           </h2>
         </div>
 
-        <ul className="border-t border-white/10">
+        <ul className="space-y-3">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <li key={i} className="border-b border-white/10">
+              <li
+                key={i}
+                style={{ transitionDelay: shown ? `${150 + i * 120}ms` : "0ms" }}
+                className={`overflow-hidden rounded-[14px] border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-all duration-700 ease-out ${
+                  shown
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-5"
+                }`}
+              >
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-6 py-7 text-left"
+                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left transition hover:bg-white/[0.02]"
                 >
-                  <span className="text-lg font-semibold text-white sm:text-xl">
+                  <span className="text-base font-semibold text-white sm:text-lg">
                     {f.q}
                   </span>
-                  {isOpen ? (
-                    <Minus size={26} className="shrink-0 text-brand-gold" />
-                  ) : (
-                    <Plus
-                      size={26}
-                      className="shrink-0 text-brand-gold transition group-hover:text-brand-gold"
-                    />
-                  )}
+                  <Plus
+                    size={22}
+                    className={`shrink-0 text-white/80 transition-transform duration-300 ${
+                      isOpen ? "rotate-45" : "rotate-0"
+                    }`}
+                  />
                 </button>
                 <div
-                  className={`grid transition-all duration-300 ease-out ${
-                    isOpen ? "grid-rows-[1fr] pb-6" : "grid-rows-[0fr]"
+                  className={`grid transition-all duration-400 ease-out ${
+                    isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
                   }`}
                 >
-                  <div className="overflow-hidden">
-                    <p className="max-w-3xl text-sm leading-relaxed text-brand-muted sm:text-base">
+                  <div className="overflow-hidden px-6">
+                    <p className="text-sm leading-relaxed text-brand-muted sm:text-base">
                       {f.a}
                     </p>
                   </div>

@@ -36,7 +36,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
   const n = useCountUp(value, visible);
   return (
     <div ref={ref} className="rounded-3xl border border-white/5 bg-brand-card p-6 sm:p-8 text-center">
-      <div className="font-display text-4xl sm:text-5xl font-extrabold text-brand-gold">
+      <div className="font-display text-4xl sm:text-5xl font-extrabold text-white">
         {n}
         {suffix}
       </div>

@@ -42,14 +42,14 @@ export default function Contact({ site }: { site: Site }) {
 
           <ul className="mt-8 space-y-5">
             <li className="flex gap-4">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold shrink-0">
+              <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-white shrink-0">
                 <Mail size={18} />
               </span>
               <div>
                 <p className="text-xs uppercase tracking-widest text-brand-muted">Email</p>
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="text-sm hover:text-brand-gold transition"
+                  className="text-sm hover:text-white transition"
                 >
                   {site.contact.email}
                 </a>
@@ -65,7 +65,7 @@ export default function Contact({ site }: { site: Site }) {
           {sent ? (
             <div className="h-full grid place-items-center text-center py-10">
               <div>
-                <CheckCircle2 className="text-brand-gold mx-auto" size={48} />
+                <CheckCircle2 className="text-white mx-auto" size={48} />
                 <h3 className="mt-4 font-display text-2xl font-bold">Thank you!</h3>
                 <p className="mt-2 text-brand-muted text-sm">
                   Your message has been received. We'll get back to you shortly.

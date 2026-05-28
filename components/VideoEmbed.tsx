@@ -24,7 +24,7 @@ function resolve(src: string): { kind: "iframe" | "video"; url: string } {
   const yt = s.match(
     /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/
   );
-  if (yt) return { kind: "iframe", url: `https://www.youtube.com/embed/${yt[1]}` };
+  if (yt) return { kind: "iframe", url: `https://www.youtube.com/embed/${yt[1]}?enablejsapi=1` };
 
   // Instagram (reel / post / tv)
   const ig = s.match(/instagram\.com\/(?:reel|reels|p|tv)\/([\w-]+)/);

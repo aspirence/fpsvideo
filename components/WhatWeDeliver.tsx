@@ -72,8 +72,8 @@ export default function WhatWeDeliver() {
           What is FPS?
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-brand-muted sm:text-base">
-          FPS is a full-service media production house from Agra — turning ideas
-          into films, design, sound and photography that move people. From the
+          FPS is a full-service media production house — turning ideas into
+          films, design, sound and photography that move people. From the
           first concept to the final cut, every frame is crafted with intent.
         </p>
 
@@ -132,13 +132,8 @@ export default function WhatWeDeliver() {
       </div>
 
       <div className="mt-12 text-center">
-        <Link
-          href="/contact"
-          className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-8 py-3 text-sm font-semibold text-black transition-colors duration-300"
-        >
-          {/* Green fill that rises from the bottom-center on hover */}
-          <span className="pointer-events-none absolute bottom-0 left-1/2 z-0 aspect-square w-[135%] -translate-x-1/2 translate-y-1/2 scale-0 rounded-full bg-emerald-400 transition-transform duration-500 ease-out group-hover:scale-100" />
-          <span className="relative z-10">Let&apos;s work together</span>
+        <Link href="/contact" className="btn-primary">
+          Let&apos;s work together
         </Link>
       </div>
     </section>

@@ -43,7 +43,7 @@ export default function AdminServices() {
     <AdminShell title="Services">
       <div className="grid gap-6">
         <div>
-          <h2 className="mb-2 text-xs uppercase tracking-widest text-brand-gold">Add new</h2>
+          <h2 className="mb-2 text-xs uppercase tracking-widest text-white">Add new</h2>
           <ServiceForm />
         </div>
         {services.map((s) => (

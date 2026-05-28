@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getServices } from "@/lib/queries";
 import { Palette, Video, Mic, Camera, Film, type LucideIcon } from "lucide-react";
 
@@ -38,13 +39,13 @@ export default function Services() {
                     : "border-white/5 bg-brand-card hover:border-brand-gold/40"
                 }`}
               >
-                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gold/10 text-brand-gold">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gold/10 text-white">
                   <Icon size={22} />
                 </div>
                 <h3 className="mt-5 font-display text-xl font-semibold">
                   {s.title}
                 </h3>
-                <p className="text-xs uppercase tracking-widest text-brand-gold/80 mt-1">
+                <p className="text-xs uppercase tracking-widest text-white/80 mt-1">
                   {s.tagline}
                 </p>
                 <p className="mt-4 text-sm text-brand-muted leading-relaxed">
@@ -73,9 +74,9 @@ export default function Services() {
               <p className="mt-2 text-sm text-brand-muted">
                 Tell us about your project and we'll tailor a package for you.
               </p>
-              <a href="#contact" className="btn-primary mt-5">
+              <Link href="/contact" className="btn-primary mt-5">
                 Talk to us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -21,8 +21,7 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
     <section className="relative overflow-hidden py-24 sm:py-32">
       {/* Heading + intro */}
       <div className="container-wide text-center">
-        <span className="eyebrow">Our Work</span>
-        <h2 className="mt-4 font-condensed text-5xl uppercase leading-none tracking-tight text-white sm:text-7xl">
+        <h2 className="font-condensed text-5xl uppercase leading-none tracking-tight text-white sm:text-7xl">
           Projects
         </h2>
         <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-brand-muted sm:text-base">
@@ -60,7 +59,7 @@ export default function ProjectsCarousel({ projects }: { projects: Project[] }) 
                   <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10 transition group-hover:ring-brand-gold/40" />
                 </div>
 
-                <span className="mt-4 block text-xs uppercase tracking-[0.2em] text-brand-gold/80">
+                <span className="mt-4 block text-xs uppercase tracking-[0.2em] text-white/80">
                   {p.category}
                 </span>
                 <h3 className="mt-1 font-display text-xl font-bold text-white">

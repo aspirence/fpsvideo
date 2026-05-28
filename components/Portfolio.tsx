@@ -37,7 +37,7 @@ export default function Portfolio({ portfolio }: { portfolio: PortfolioItem[] })
               className={`px-4 py-2 rounded-full text-sm font-medium transition border ${
                 active === c
                   ? "bg-brand-gold text-black border-brand-gold"
-                  : "border-white/10 text-white/80 hover:border-brand-gold hover:text-brand-gold"
+                  : "border-white/10 text-white/80 hover:border-brand-gold hover:text-white"
               }`}
             >
               {c}
@@ -59,13 +59,13 @@ export default function Portfolio({ portfolio }: { portfolio: PortfolioItem[] })
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
-                <span className="text-xs uppercase tracking-widest text-brand-gold">
+                <span className="text-xs uppercase tracking-widest text-white">
                   {item.category}
                 </span>
                 <h3 className="mt-1 font-display text-2xl font-bold text-white">
                   {item.title}
                 </h3>
-                <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80 group-hover:text-brand-gold transition">
+                <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80 group-hover:text-white transition">
                   View project <ArrowUpRight size={16} />
                 </div>
               </div>

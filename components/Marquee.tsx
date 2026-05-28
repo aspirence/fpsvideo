@@ -20,7 +20,7 @@ export default function Marquee() {
             key={i}
             className="font-display text-2xl sm:text-3xl font-bold text-white/40"
           >
-            {t} <span className="text-brand-gold">•</span>
+            {t} <span className="text-white">•</span>
           </span>
         ))}
       </div>

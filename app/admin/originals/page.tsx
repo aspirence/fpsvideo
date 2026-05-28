@@ -30,14 +30,14 @@ export default function AdminOriginals() {
     <AdminShell title="FPS Originals">
       <p className="mb-5 text-sm text-brand-muted">
         Upload media on the{" "}
-        <Link href="/admin/upload" className="text-brand-gold">
+        <Link href="/admin/upload" className="text-white">
           Upload page
         </Link>{" "}
         and paste the path here.
       </p>
       <div className="grid gap-6">
         <div>
-          <h2 className="mb-2 text-xs uppercase tracking-widest text-brand-gold">Add new</h2>
+          <h2 className="mb-2 text-xs uppercase tracking-widest text-white">Add new</h2>
           <BtsForm />
         </div>
         {items.map((b) => (

@@ -34,7 +34,7 @@ export default function AboutTeaser() {
                 key={p.title}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80"
               >
-                <p.icon size={14} className="text-brand-gold" /> {p.title}
+                <p.icon size={14} className="text-white" /> {p.title}
               </span>
             ))}
           </div>
@@ -45,7 +45,7 @@ export default function AboutTeaser() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 relative">
+          <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 relative">
             <MediaTile
               image="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80"
               video="/videos/v3.mp4"

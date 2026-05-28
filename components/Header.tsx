@@ -58,8 +58,8 @@ export default function Header() {
               href={item.href}
               className={`text-sm font-medium transition ${
                 isActive(item.href)
-                  ? "text-brand-gold"
-                  : "text-white/80 hover:text-brand-gold"
+                  ? "text-white"
+                  : "text-white/80 hover:text-white"
               }`}
             >
               {item.label}
@@ -91,8 +91,8 @@ export default function Header() {
                 href={item.href}
                 className={`py-2 transition ${
                   isActive(item.href)
-                    ? "text-brand-gold"
-                    : "text-white/90 hover:text-brand-gold"
+                    ? "text-white"
+                    : "text-white/90 hover:text-white"
                 }`}
               >
                 {item.label}

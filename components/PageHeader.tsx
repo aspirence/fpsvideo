@@ -26,16 +26,16 @@ export default function PageHeader({
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          {/* Dark overlays keep the headline readable over any image */}
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg via-brand-bg/85 to-brand-bg/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/80 via-transparent to-transparent" />
+          {/* Lighter overlays — image is more visible while headline stays readable */}
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-brand-bg/40 to-brand-bg/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-bg/50 via-transparent to-transparent" />
         </>
       )}
 
       {!image && <div className="absolute inset-0 hero-grid" />}
       <div
         className="absolute -top-32 left-1/2 -translate-x-1/2 h-[360px] w-[700px] rounded-full blur-3xl opacity-20"
-        style={{ background: "radial-gradient(closest-side, #3b82f6, transparent)" }}
+        style={{ background: "radial-gradient(closest-side, #dc2626, transparent)" }}
       />
 
       <div className="container-wide relative flex min-h-[46vh] flex-col justify-end pt-36 pb-14 sm:min-h-[54vh] sm:pt-44 sm:pb-16">
@@ -44,7 +44,7 @@ export default function PageHeader({
             {crumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-1">
                 {c.href ? (
-                  <Link href={c.href} className="hover:text-brand-gold transition">
+                  <Link href={c.href} className="hover:text-white transition">
                     {c.label}
                   </Link>
                 ) : (

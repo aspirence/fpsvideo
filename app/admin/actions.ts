@@ -25,6 +25,8 @@ import {
   deleteStat,
   saveBts,
   deleteBts,
+  saveInstagram,
+  deleteInstagram,
   type ProjectInput
 } from "@/lib/queries";
 
@@ -228,4 +230,21 @@ export async function deleteBtsAction(formData: FormData) {
   assertAuthed();
   deleteBts(Number(formData.get("id") ?? 0));
   refresh("/admin/originals");
+}
+
+/* ---------- Instagram ---------- */
+export async function saveInstagramAction(formData: FormData) {
+  assertAuthed();
+  saveInstagram(Number(formData.get("id") ?? 0), {
+    url: String(formData.get("url") ?? "").trim(),
+    image: String(formData.get("image") ?? "").trim(),
+    alt: String(formData.get("alt") ?? "").trim()
+  });
+  refresh("/admin/instagram");
+  redirect("/admin/instagram");
+}
+export async function deleteInstagramAction(formData: FormData) {
+  assertAuthed();
+  deleteInstagram(Number(formData.get("id") ?? 0));
+  refresh("/admin/instagram");
 }

@@ -296,6 +296,38 @@ export function deleteBts(id: number) {
   getDb().prepare("DELETE FROM bts WHERE id=?").run(id);
 }
 
+/* ===================== Instagram ===================== */
+export type Instagram = {
+  id: number;
+  url: string;
+  image: string;
+  alt: string;
+};
+export type InstagramInput = Omit<Instagram, "id">;
+
+export function getInstagram(): Instagram[] {
+  return getDb()
+    .prepare("SELECT * FROM instagram ORDER BY sort, id")
+    .all() as Instagram[];
+}
+export function saveInstagram(id: number, d: InstagramInput) {
+  const db = getDb();
+  if (id > 0)
+    db.prepare(
+      "UPDATE instagram SET url=@url, image=@image, alt=@alt WHERE id=@id"
+    ).run({ id, ...d });
+  else {
+    const m =
+      (db.prepare("SELECT MAX(sort) m FROM instagram").get() as any)?.m ?? 0;
+    db.prepare(
+      "INSERT INTO instagram (url, image, alt, sort) VALUES (@url, @image, @alt, @sort)"
+    ).run({ ...d, sort: m + 1 });
+  }
+}
+export function deleteInstagram(id: number) {
+  getDb().prepare("DELETE FROM instagram WHERE id=?").run(id);
+}
+
 /* ===================== Site ===================== */
 export type Site = {
   name: string;

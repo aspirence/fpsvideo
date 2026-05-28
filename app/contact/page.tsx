@@ -7,7 +7,7 @@ import { getSite } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Contact — FPS",
-  description: "Get in touch with FPS — Agra-based media production house."
+  description: "Get in touch with FPS — a full-service media production house."
 };
 
 export const dynamic = "force-dynamic";
@@ -18,8 +18,8 @@ const faqs = [
     a: "Within a working day. Urgent project? Mention it in your message and we'll prioritize."
   },
   {
-    q: "Do you work outside Agra?",
-    a: "Yes — we travel across India for shoots, and we deliver editing/design work remotely worldwide."
+    q: "Where do you work from?",
+    a: "We travel across India for shoots, and we deliver editing, design and post-production work remotely worldwide."
   },
   {
     q: "Do you offer monthly retainers?",
@@ -46,9 +46,9 @@ export default function ContactPage() {
 
       <Reveal>
         <section className="py-16 sm:py-20 border-t border-white/5 bg-brand-surface/30">
-          <div className="container-wide grid gap-10 lg:grid-cols-3">
+          <div className="container-wide grid gap-10 lg:grid-cols-2 max-w-4xl mx-auto">
             <div className="rounded-3xl border border-white/5 bg-brand-card p-6">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-white">
                 <Clock size={18} />
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">Working hours</h3>
@@ -59,30 +59,16 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-3xl border border-white/5 bg-brand-card p-6">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-brand-gold/10 text-white">
                 <Globe size={18} />
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">Working with us</h3>
               <p className="mt-3 text-sm text-brand-muted leading-relaxed">
-                Based in Agra. Available for shoots across India and remote editing,
-                design and post-production globally.
+                Available for shoots across India and remote editing, design
+                and post-production globally.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/5 bg-brand-card p-6">
-              <h3 className="font-display text-lg font-semibold">Find us on the map</h3>
-              <p className="mt-2 text-sm text-brand-muted">
-                Visit our studio in Agra — drop by during working hours.
-              </p>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.google.com/maps/search/Krishna+Vatika+Panchawati+Agra"
-                className="btn-ghost mt-4 inline-flex"
-              >
-                Open in Maps
-              </a>
-            </div>
           </div>
         </section>
       </Reveal>
@@ -102,7 +88,7 @@ export default function ContactPage() {
                 <details key={f.q} className="group p-6">
                   <summary className="cursor-pointer list-none flex items-center justify-between gap-4">
                     <span className="font-display font-semibold">{f.q}</span>
-                    <span className="text-brand-gold transition group-open:rotate-45">+</span>
+                    <span className="text-white transition group-open:rotate-45">+</span>
                   </summary>
                   <p className="mt-3 text-sm text-brand-muted leading-relaxed">{f.a}</p>
                 </details>

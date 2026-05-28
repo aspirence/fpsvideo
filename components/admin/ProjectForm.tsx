@@ -104,7 +104,7 @@ export default function ProjectForm({ project }: { project?: Project }) {
                 aria-label="Remove clip"
                 className="px-2 text-red-400 transition hover:text-red-300"
               >
-                ✕
+                âœ•
               </button>
             </div>
           ))}
@@ -112,7 +112,7 @@ export default function ProjectForm({ project }: { project?: Project }) {
         <button
           type="button"
           onClick={addClip}
-          className="mt-3 inline-flex items-center gap-1 border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:border-brand-gold hover:text-brand-gold"
+          className="mt-3 inline-flex items-center gap-1 border border-white/15 px-4 py-2 text-sm text-white/80 transition hover:border-brand-gold hover:text-white"
         >
           + Add clip
         </button>
@@ -211,7 +211,7 @@ function Media({
           placeholder="/uploads/... or paste a URL"
           className="min-w-0 flex-1 border border-white/10 bg-black/40 px-3 py-2.5 text-sm focus:border-brand-gold focus:outline-none"
         />
-        <label className="cursor-pointer whitespace-nowrap border border-white/15 px-4 py-2.5 text-sm text-white/80 transition hover:border-brand-gold hover:text-brand-gold">
+        <label className="cursor-pointer whitespace-nowrap border border-white/15 px-4 py-2.5 text-sm text-white/80 transition hover:border-brand-gold hover:text-white">
           {busy ? "Uploading…" : "Upload"}
           <input
             type="file"

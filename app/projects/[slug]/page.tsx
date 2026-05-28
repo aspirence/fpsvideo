@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import MediaTile from "@/components/MediaTile";
-import VideoEmbed from "@/components/VideoEmbed";
+import ClipsGrid from "@/components/ClipsGrid";
 import CTABanner from "@/components/CTABanner";
 import Reveal from "@/components/Reveal";
 import { getProjectBySlug } from "@/lib/queries";
@@ -32,7 +32,7 @@ export default function ProjectDetailPage({
     <>
       {/* Solid navbar area on top, then the full-width thumbnail below it */}
       <section className="pt-16 sm:pt-20">
-        <div className="relative h-[70vh] w-full overflow-hidden border-y border-white/10 sm:h-[82vh]">
+        <div className="relative h-[70vh] w-full overflow-hidden border-b border-white/10 sm:h-[82vh]">
           <MediaTile
             image={project.image}
             video={project.video}
@@ -91,22 +91,7 @@ export default function ProjectDetailPage({
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {project.clips.map((clip, i) => (
-              <Reveal key={`${clip.title}-${i}`}>
-                <figure>
-                  <VideoEmbed
-                    src={clip.src}
-                    title={clip.title}
-                    poster={project.image}
-                  />
-                  <figcaption className="mt-3 text-sm font-medium text-white/90">
-                    {clip.title}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
+          <ClipsGrid clips={project.clips} poster={project.image} />
         </div>
       </section>
 

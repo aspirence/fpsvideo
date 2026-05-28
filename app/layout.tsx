@@ -7,7 +7,7 @@ import { getSite, getServices } from "@/lib/queries";
 export const metadata: Metadata = {
   title: "FPS - Where Creativity Meets Results",
   description:
-    "Full-Service Media Production, Video Editing & Graphic Design house based in Agra, India.",
+    "Full-Service Media Production, Video Editing & Graphic Design — crafting stories that move people.",
   keywords: [
     "FPS",
     "Video Production",
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "Audio Production",
     "Photography",
     "Video Editing",
-    "Agra"
+    "Production House",
+    "Brand Films"
   ]
 };
 

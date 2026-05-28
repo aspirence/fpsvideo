@@ -57,7 +57,7 @@ export default function AdminUploadPage() {
                     <input
                       readOnly
                       value={url}
-                      className="w-full border border-white/10 bg-black/40 px-2 py-1.5 text-xs text-brand-gold"
+                      className="w-full border border-white/10 bg-black/40 px-2 py-1.5 text-xs text-white"
                     />
                     <div className="mt-2 flex items-center justify-between">
                       <span className="text-[10px] uppercase tracking-widest text-brand-muted">

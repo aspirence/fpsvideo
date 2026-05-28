@@ -42,7 +42,7 @@ export default function About() {
                 key={p.title}
                 className="rounded-2xl border border-white/5 bg-brand-card p-5"
               >
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-gold/10 text-brand-gold">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-gold/10 text-white">
                   <p.icon size={20} />
                 </div>
                 <h3 className="mt-4 font-display font-semibold text-lg">
@@ -75,7 +75,7 @@ export default function About() {
             </div>
           </div>
           <div className="hidden sm:block absolute -bottom-6 -left-6 rounded-2xl border border-white/10 bg-brand-card p-4 w-48">
-            <div className="text-3xl font-display font-bold text-brand-gold">
+            <div className="text-3xl font-display font-bold text-white">
               50M+
             </div>
             <div className="text-xs text-brand-muted">Total views generated</div>
