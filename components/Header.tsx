@@ -44,11 +44,14 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container-wide flex h-16 sm:h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-2xl font-extrabold tracking-tight">
-            F<span className="gradient-text">PS</span>
-          </span>
+      <div className="container-wide flex h-20 sm:h-24 items-center justify-between">
+        <Link href="/" aria-label="FPS — Home" className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/2.webp"
+            alt="FPS"
+            className="h-16 w-auto sm:h-20"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

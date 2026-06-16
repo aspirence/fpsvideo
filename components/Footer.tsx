@@ -19,8 +19,13 @@ export default function Footer({
     <footer className="bg-brand-bg">
       <div className="container-wide py-14 grid gap-10 md:grid-cols-4">
         <div>
-          <Link href="/" className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            F<span className="gradient-text">PS</span>
+          <Link href="/" aria-label="FPS — Home" className="inline-flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/2.webp"
+              alt="FPS"
+              className="h-12 w-auto sm:h-16"
+            />
           </Link>
           <p className="mt-4 text-sm text-brand-muted leading-relaxed">
             {site.description}. We craft stories that engage and drive results.
