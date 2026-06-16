@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Showcase from "@/components/Showcase";
-import Stats from "@/components/Stats";
 import Clients from "@/components/Clients";
 import AboutTeaser from "@/components/AboutTeaser";
 import WhatWeDeliver from "@/components/WhatWeDeliver";
@@ -14,7 +13,6 @@ import Reveal from "@/components/Reveal";
 import {
   getProjects,
   getPortfolio,
-  getStats,
   getBts
 } from "@/lib/queries";
 
@@ -23,12 +21,10 @@ export const dynamic = "force-dynamic";
 export default function HomePage() {
   const projects = getProjects();
   const portfolio = getPortfolio();
-  const stats = getStats();
   const bts = getBts();
   return (
     <>
       <Hero />
-      <Reveal><Stats stats={stats} /></Reveal>
       <Showcase portfolio={portfolio} />
       <Reveal><Clients /></Reveal>
       <Reveal><AboutTeaser /></Reveal>
